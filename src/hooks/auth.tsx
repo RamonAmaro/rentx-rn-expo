@@ -1,5 +1,4 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
-import { useEffect } from 'react';
+import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { database } from '../database';
 import { User as UserModel } from '../database/model/User';
 import { api } from '../services/api';
@@ -49,6 +48,7 @@ function AuthProvider({ children }: AuthProviderProps) {
                     newUser.user_id = user.id;
                     newUser.name = user.name;
                     newUser.email = user.email;
+                    newUser.driver_license = user.driver_license;
                     newUser.avatar = user.avatar;
                     newUser.token = token;
                 });
